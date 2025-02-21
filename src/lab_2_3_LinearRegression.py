@@ -79,7 +79,9 @@ class LinearRegressor:
 
         if np.ndim(X) == 1:
             # TODO: Predict when X is only one variable
-            predictions = self.coefficients*X + self.intercept
+            predictions = []
+            for i in range(len(X)):
+                predictions.append(self.coefficients*X[i] + self.intercept)
         else:
             # TODO: Predict when X is more than one variable
             predictions = np.dot(X,self.coefficients) + self.intercept
